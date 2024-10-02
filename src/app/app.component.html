@@ -1,8 +1,20 @@
-<nav>
-	<ul>
-		<li><a href="/student-list">Student List</a></li>
 
-  </ul>
-</nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student and Employee Lists</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="/student-list">Student List</a></li>
+                <li><a href="/employee-list">Employee List</a></li>
+            </ul>
+        </nav>
 
-<router-outlet></router-outlet>
+        <main class="content">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</body>

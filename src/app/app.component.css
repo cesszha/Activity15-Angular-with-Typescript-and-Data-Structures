@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box; /* Ensure padding and borders do not affect width */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Set a default font */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc; /* Light background color */
+}
+
+.container {
+    display: flex; /* Use flexbox for layout */
+}
+
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #ffebee; /* Light pastel pink */
+    padding: 20px; /* Padding for sidebar */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove bullets from list */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar li {
+    margin-bottom: 15px; /* Space between list items */
+}
+
+.sidebar a {
+    text-decoration: none; /* Remove underline from links */
+    color: #d81b60; /* Darker pink for link color */
+    font-weight: bold; /* Make links bold */
+}
+
+.sidebar a:hover {
+    color: #c2185b; /* Darker shade on hover */
+}
+
+.content {
+    flex-grow: 1; /* Allow content area to expand */
+    background-color: #e3f2fd; /* Light pastel blue */
+    padding: 20px; /* Padding for content area */
+}
