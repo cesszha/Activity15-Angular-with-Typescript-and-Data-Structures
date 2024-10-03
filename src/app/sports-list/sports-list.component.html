@@ -1,0 +1,101 @@
+<main>
+	<h1>Sports List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Team</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let sport of sports">
+				<td>{{ sport.name }}</td>
+				<td>{{ sport.team }}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div>
+		<label for="name">Name:</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name"
+			name="name"
+			required />
+	</div>
+	<div>
+		<label for="team">Team:</label>
+		<input
+			type="text"
+			id="team"
+			[(ngModel)]="team"
+			name="team"
+			required />
+	</div>
+	<button (click)="addSport()" class="btn" >Add Sport</button>
+</main>
+
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
