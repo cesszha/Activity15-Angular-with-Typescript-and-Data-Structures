@@ -1,61 +1,59 @@
 <main>
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h1>Phone Contact List</h1>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Phone</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr *ngFor="let phoneContact of phoneContactList">
-							<td>{{ phoneContact.name }}</td>
-							<td>{{ phoneContact.email }}</td>
-							<td>{{ phoneContact.phone }}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Description</th>
+				<th>Rating</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let foodMenu of foodMenuList">
+				<td>{{ foodMenu.name }}</td>
+				<td>{{ foodMenu.price }}</td>
+				<td>{{ foodMenu.description }}</td>
+				<td>{{ foodMenu.rating }}</td>
+			</tr>
+		</tbody>
+	</table>
 
-		<div>
-			<div>
-				<label for="name"> Name: </label>
-				<input
-					id="name"
-					type="text"
-					class="form-control"
-					[(ngModel)]="name" />
-			</div>
-			<div>
-				<label for="email"> Email: </label>
-				<input
-					id="email"
-					type="text"
-					class="form-control"
-					[(ngModel)]="email" />
-			</div>
-			<div>
-				<label for="phone"> Phone: </label>
-				<input
-					id="phone"
-					type="text"
-					class="form-control"
-					[(ngModel)]="phone" />
-			</div>
-			<div>
-				<button
-					class="btn btn-primary"
-					(click)="addPhoneContact()">
-					Add Phone Contact
-				</button>
-			</div>
-		</div>
+	<div>
+		<label for="name">Name:</label>
+		<input
+			type="text"
+			id="name"
+			name="name"
+			[(ngModel)]="name" />
 	</div>
+
+	<div>
+		<label for="price">Price:</label>
+		<input
+			type="number"
+			id="price"
+			name="price"
+			[(ngModel)]="price" />
+	</div>
+
+	<div>
+		<label for="description">Description:</label>
+		<input
+			type="text"
+			id="description"
+			name="description"
+			[(ngModel)]="description" />
+	</div>
+
+	<div>
+		<label for="rating">Rating:</label>
+		<input
+			type="number"
+			id="rating"
+			name="rating"
+			[(ngModel)]="rating" />
+	</div>
+	<button (click)="addFoodMenu()"class="btn">Add Food</button>
 </main>
 
 <style>
