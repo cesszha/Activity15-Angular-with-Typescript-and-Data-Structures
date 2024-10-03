@@ -18,7 +18,7 @@ import { ToolListComponent } from './tool-list/tool-list.component';
 import { LanguageListComponent } from './language-list/language-list.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { SoftwareListComponent } from './software-list/software-list.component';
-
+import { PhoneContactListComponent } from './phone-contact-list/phone-contact-list.component';
 
 
 
@@ -113,6 +113,11 @@ export const routes: Routes = [
     title: 'Software List',
     component: SoftwareListComponent,
     path: 'software-list',
+},
+{
+    title: 'Phone Contact List',
+    component: PhoneContactListComponent,
+    path: 'phone-contact-list',
 },
 
 
