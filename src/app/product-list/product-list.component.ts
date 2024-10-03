@@ -14,13 +14,11 @@ export class ProductListComponent {
 	name: string = '';
 	price: number = 0;
 
-	addProduct(): void {
-		this.products.push({
-			name: this.name,
-			price: this.price,
-		});
-
-		this.name = '';
-		this.price = 0;
+	addProduct() {
+        if (this.name && this.price) {
+            this.products.push({ name: this.name, price: this.price });
+            this.name = ''; 
+            this.price = 0;
+        }
 	}
 }

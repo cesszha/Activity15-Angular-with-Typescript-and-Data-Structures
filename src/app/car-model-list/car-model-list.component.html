@@ -1,62 +1,65 @@
 <main>
-	<h2>Car Model List</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Year</th>
-				<th>Model</th>
-				<th>Price</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let carModel of carModels">
-				<td>{{ carModel.name }}</td>
-				<td>{{ carModel.year }}</td>
-				<td>{{ carModel.model }}</td>
-				<td>{{ carModel.price }}</td>
-			</tr>
-		</tbody>
-	</table>
+    <h2>Car Model List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let carModel of carModels">
+                <td>{{ carModel.name }}</td>
+                <td>{{ carModel.year }}</td>
+                <td>{{ carModel.model }}</td>
+                <td>{{ carModel.price }}</td>
+            </tr>
+        </tbody>
+    </table>
 
-	<div>
-		<label for="name">Name:</label>
-		<input
-			type="text"
-			id="name"
-			[(ngModel)]="name"
-			name="name"
-			required />
-	</div>
-	<div>
-		<label for="year">Year</label>
-		<input
-			type="text"
-			id="year"
-			[(ngModel)]="year"
-			name="year"
-			required />
-	</div>
-	
-	<div>
-		<label for="model">Model:</label>
-		<input
-			type="text"
-			id="model"
-			[(ngModel)]="model"
-			name="model"
-			required />
-	</div>
-	<div>
-		<label for="price">Price:</label>
-		<input
-			type="number"
-			id="price"
-			[(ngModel)]="price"
-			name="price"
-			required />
-	</div>
-	<button (click)="addCarModel()">Add Car Model</button>
+    <div>
+        <label for="name">Name:</label>
+        <input
+            type="text"
+            id="name"
+            [(ngModel)]="name"
+            name="name"
+            required />
+    </div>
+
+    <div>
+        <label for="year">Year:</label>
+        <input
+            type="text"
+            id="year"
+            [(ngModel)]="year"
+            name="year"
+            required />
+    </div>
+
+    <div>
+        <label for="model">Model:</label>
+        <input
+            type="text"
+            id="model"
+            [(ngModel)]="model"
+            name="model"
+            required />
+    </div>
+
+    <div>
+        <label for="price">Price:</label>
+        <input
+            type="number"
+            id="price"
+            [(ngModel)]="price"
+            name="price"
+            required />
+    </div>
+
+    <button (click)="addCarModel()" class="btn">Add Car Model</button>
 </main>
 <style>
     main {
