@@ -21,6 +21,7 @@ import { SoftwareListComponent } from './software-list/software-list.component';
 import { PhoneContactListComponent } from './phone-contact-list/phone-contact-list.component';
 import { MusicPlaylistComponent } from './music-playlist/music-playlist.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
+import { GroceryListComponent } from './grocery-list/grocery-list.component';
 
 
 
@@ -130,6 +131,12 @@ export const routes: Routes = [
     component: FoodMenuComponent,
     path: 'food-menu',
 },
+{
+    title: 'Grocery List',
+    component: GroceryListComponent,
+    path: 'grocery-list',
+},
+
 
 
 
