@@ -14,7 +14,6 @@ export class CarModelListComponent {
   carModels: CarModel[] = [];
 	name: string = '';
 	year: number = 0;
-	make: string = '';
 	model: string = '';
 	price: number = 0;
 
@@ -22,14 +21,12 @@ export class CarModelListComponent {
 		this.carModels.push({
 			name: this.name,
 			year: this.year,
-			make: this.make,
 			model: this.model,
 			price: this.price,
 		});
 
 		this.name = '';
 		this.year = 0;
-		this.make = '';
 		this.model = '';
 		this.price = 0;
 	}
