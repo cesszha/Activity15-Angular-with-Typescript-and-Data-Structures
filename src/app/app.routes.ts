@@ -30,6 +30,7 @@ import { FlowerListComponent } from './flower-list/flower-list.component';
 import { DestinationListComponent } from './destination-list/destination-list.component';
 import { LaptopListComponent } from './laptop-list/laptop-list.component';
 import { LaptopSpecListComponent } from './laptop-spec-list/laptop-spec-list.component';
+import { ComputerHardwareListComponent } from './computer-hardware-list/computer-hardware-list.component';
 
 
 
@@ -183,6 +184,11 @@ export const routes: Routes = [
     title: 'Laptop Specs List',
     component: LaptopSpecListComponent,
     path: 'laptop-spec-list',
+},
+{
+    title: 'Computer Hardware List',
+    component: ComputerHardwareListComponent,
+    path: 'computer-hardware-list',
 },
 
 
