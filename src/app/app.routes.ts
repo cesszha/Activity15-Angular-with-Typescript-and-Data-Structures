@@ -26,7 +26,7 @@ import { ClassroomListComponent } from './classroom-list/classroom-list.componen
 import { InventoryListComponent } from './inventory-list/inventory-list.component';
 import { LectureListComponent } from './lecture-list/lecture-list.component';
 import { StationeryListComponent } from './stationery-list/stationery-list.component';
-
+import { FlowerListComponent } from './flower-list/flower-list.component';
 
 
 
@@ -162,6 +162,12 @@ export const routes: Routes = [
     component: StationeryListComponent,
     path: 'stationery-list',
 },
+{
+    title: 'Flower List',
+    component: FlowerListComponent,
+    path: 'flower-list',
+},
+
 
 
 
