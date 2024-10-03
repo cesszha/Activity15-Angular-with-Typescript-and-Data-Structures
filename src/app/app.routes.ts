@@ -14,6 +14,7 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { SportsListComponent } from './sports-list/sports-list.component';
 import { VegetableListComponent } from './vegetable-list/vegetable-list.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
+import { ToolListComponent } from './tool-list/tool-list.component';
 export const routes: Routes = [
 {
     title: 'Student List',
@@ -85,6 +86,12 @@ export const routes: Routes = [
     component: AnimalListComponent,
     path: 'animal-list',
 },
+{
+    title: 'Tool List',
+    component: ToolListComponent,
+    path: 'tool-list',
+},
+
 
 
 
