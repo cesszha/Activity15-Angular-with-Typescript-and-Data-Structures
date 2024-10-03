@@ -1,0 +1,147 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-center">Music Play List</h1>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Artist</th>
+							<th>Album</th>
+							<th>Duration</th>
+							<th>Genre</th>
+							<th>Year</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let music of musicPlayList">
+							<td>{{ music.name }}</td>
+							<td>{{ music.artist }}</td>
+							<td>{{ music.album }}</td>
+							<td>{{ music.duration }}</td>
+							<td>{{ music.genre }}</td>
+							<td>{{ music.year }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				[(ngModel)]="name" />
+		</div>
+		<div>
+			<label for="artist">Artist</label>
+			<input
+				type="text"
+				id="artist"
+				name="artist"
+				[(ngModel)]="artist" />
+		</div>
+		<div>
+			<label for="album">Album</label>
+			<input
+				type="text"
+				id="album"
+				name="album"
+				[(ngModel)]="album" />
+		</div>
+		<div>
+			<label for="duration">Duration</label>
+			<input
+				type="text"
+				id="duration"
+				name="duration"
+				[(ngModel)]="duration" />
+		</div>
+		<div>
+			<label for="genre">Genre</label>
+			<input
+				type="text"
+				id="genre"
+				name="genre"
+				[(ngModel)]="genre" />
+		</div>
+		<div>
+			<label for="year">Year</label>
+			<input
+				type="text"
+				id="year"
+				name="year"
+				[(ngModel)]="year" />
+		</div>
+		<div>
+			<button (click)="addMusicPlayList()"class = "btn" >Add Music</button>
+		</div>
+	</div>
+</main>
+
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
