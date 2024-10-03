@@ -1,0 +1,165 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-center">Laptop List</h1>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Model</th>
+							<th>Brand</th>
+							<th>Price</th>
+							<th>Processor</th>
+							<th>RAM</th>
+							<th>Storage</th>
+							<th>Display</th>
+							<th>Graphics</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let laptop of laptops">
+							<td>{{ laptop.model }}</td>
+							<td>{{ laptop.brand }}</td>
+							<td>{{ laptop.price }}</td>
+							<td>{{ laptop.processor }}</td>
+							<td>{{ laptop.ram }}</td>
+							<td>{{ laptop.storage }}</td>
+							<td>{{ laptop.display }}</td>
+							<td>{{ laptop.graphics }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="id">ID:</label>
+			<input
+				type="text"
+				id="id"
+				[(ngModel)]="id" />
+		</div>
+		<div>
+			<label for="model">Model:</label>
+			<input
+				type="text"
+				id="model"
+				[(ngModel)]="model" />
+		</div>
+		<div>
+			<label for="brand">Brand:</label>
+			<input
+				type="text"
+				id="brand"
+				[(ngModel)]="brand" />
+		</div>
+		<div>
+			<label for="price">Price:</label>
+			<input
+				type="text"
+				id="price"
+				[(ngModel)]="price" />
+		</div>
+		<div>
+			<label for="processor">Processor:</label>
+			<input
+				type="text"
+				id="processor"
+				[(ngModel)]="processor" />
+		</div>
+		<div>
+			<label for="ram">RAM:</label>
+			<input
+				type="text"
+				id="ram"
+				[(ngModel)]="ram" />
+		</div>
+		<div>
+			<label for="storage">Storage:</label>
+			<input
+				type="text"
+				id="storage"
+				[(ngModel)]="storage" />
+		</div>
+		<div>
+			<label for="display">Display:</label>
+			<input
+				type="text"
+				id="display"
+				[(ngModel)]="display" />
+		</div>
+		<div>
+			<label for="graphics">Graphics:</label>
+			<input
+				type="text"
+				id="graphics"
+				[(ngModel)]="graphics" />
+		</div>
+		<div>
+			<button (click)="addLaptop()"class="btn">Add Laptop</button>
+		</div>
+	</div>
+</main>
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; 
+    }
+</style>
