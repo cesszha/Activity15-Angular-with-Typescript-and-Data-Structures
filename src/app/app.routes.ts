@@ -39,6 +39,7 @@ import { AccessoryListComponent } from './accessory-list/accessory-list.componen
 import { BuildingListComponent } from './building-list/building-list.component';
 import { PaintingListComponent } from './painting-list/painting-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
+import { ComposerListComponent } from './composer-list/composer-list.component';
 
 
 
@@ -239,6 +240,11 @@ export const routes: Routes = [
     title: 'Artist List',
     component: ArtistListComponent,
     path: 'artist-list',
+},
+{
+    title: 'Composer List',
+    component: ComposerListComponent,
+    path: 'composer-list',
 },
 
 

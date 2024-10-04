@@ -1,0 +1,121 @@
+<main>
+	<h1>Composer List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Composer</th>
+				<th>Popular Music</th>
+				<th>Genre</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let composer of composers">
+				<td>{{ composer.composer }}</td>
+				<td>{{ composer.popularSong }}</td>
+				<td>{{ composer.genre }}</td>
+				<td>{{ composer.country }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="name">Composer:</label>
+		<input
+			type="text"
+			id="composer"
+			[(ngModel)]="composer" />
+	</div>
+
+	<div>
+		<label for="popularMusic">Popular Song:</label>
+		<input
+			type="text"
+			id="popularSong"
+			[(ngModel)]="popularSong" />
+	</div>
+
+	<div>
+		<label for="genre">Genre:</label>
+		<input
+			type="text"
+			id="genre"
+			[(ngModel)]="genre" />
+	</div>
+
+	<div>
+		<label for="country">Country:</label>
+		<input
+			type="text"
+			id="country"
+			[(ngModel)]="country" />
+	</div>
+
+	<div>
+		<button (click)="addComposer()"class="btn">Add Composer</button>
+	</div>
+</main>
+
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
