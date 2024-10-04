@@ -276,6 +276,12 @@ export const routes: Routes = [
     component: PresentationListComponent,
     path: 'presentation-list',
 },
+{
+    title: 'Tour List',
+    component: ToolListComponent,
+    path: 'tour-list',
+},
+
 
 
 
