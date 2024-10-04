@@ -1,0 +1,129 @@
+<main>
+	<h1>Mobile App List</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Rating</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let mobileApp of mobileApps">
+				<td>
+					{{ mobileApp.name }}
+				</td>
+				<td>
+					{{ mobileApp.description }}
+				</td>
+				<td>
+					{{ mobileApp.price }}
+				</td>
+				<td>
+					{{ mobileApp.rating }}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="name">Name:</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name" />
+	</div>
+
+	<div>
+		<label for="description">Description:</label>
+		<input
+			type="text"
+			id="description"
+			[(ngModel)]="description" />
+	</div>
+
+	<div>
+		<label for="price">Price:</label>
+		<input
+			type="number"
+			id="price"
+			[(ngModel)]="price" />
+	</div>
+
+	<div>
+		<label for="rating">Rating:</label>
+		<input
+			type="number"
+			id="rating"
+			[(ngModel)]="rating" />
+	</div>
+
+	<div>
+		<button (click)="addMobileApp()"class="btn">Add Mobile App</button>
+	</div>
+</main>
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
