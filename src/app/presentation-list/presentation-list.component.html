@@ -1,0 +1,123 @@
+<main>
+    <h1>Presentation List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Presenter</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let presentation of presentations">
+                <td>{{ presentation.topic }}</td>
+                <td>{{ presentation.presenter }}</td>
+                <td>{{ presentation.date }}</td>
+                <td>{{ presentation.time }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <label for="topic">Topic:</label>
+        <input
+            type="text"
+            id="topic"
+            name="topic"
+            [(ngModel)]="topic" />
+    </div>
+
+    <div class="form-group">
+        <label for="presenter">Presenter:</label>
+        <input
+            type="text"
+            id="presenter"
+            name="presenter"
+            [(ngModel)]="presenter" />
+    </div>
+
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input
+            type="date"
+            id="date"
+            name="date"
+            [(ngModel)]="date" />
+    </div>
+
+    <div class="form-group">
+        <label for="time">Time:</label>
+        <input
+            type="time"
+            id="time"
+            name="time"
+            [(ngModel)]="time" />
+    </div>
+
+    
+    <div>
+        <button (click)="addPresentation()" class="btn">Add Presentation</button>
+    </div>
+</main>
+
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center; 
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"] { 
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+
+    .btn {
+        background-color: #007bff; 
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; 
+    }
+</style>
