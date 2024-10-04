@@ -45,6 +45,8 @@ import { ExerciseListComponent } from './exercise-list/exercise-list.component';
 import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { PresentationListComponent } from './presentation-list/presentation-list.component';
+import { TourListComponent } from './tour-list/tour-list.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 
 
@@ -278,8 +280,13 @@ export const routes: Routes = [
 },
 {
     title: 'Tour List',
-    component: ToolListComponent,
+    component: TourListComponent,
     path: 'tour-list',
+},
+{
+    title: 'Event List',
+    component: EventListComponent,
+    path: 'event-list',
 },
 
 
