@@ -1,0 +1,131 @@
+<main>
+	<div>
+		<h1>Building List</h1>
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>Building</th>
+						<th>Address</th>
+						<th>Floors</th>
+						<th>Rooms</th>
+						<th>Occupants</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let building of buildingList">
+						<td>{{ building.bulding }}</td>
+						<td>{{ building.address }}</td>
+						<td>{{ building.floors }}</td>
+						<td>{{ building.rooms }}</td>
+						<td>{{ building.occupants }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div>
+			<label for="name">Building:</label>
+			<input
+				type="text"
+				id="building"
+				name="building"
+				[(ngModel)]="building" />
+		</div>
+		<div>
+			<label for="address">Address:</label>
+			<input
+				type="text"
+				id="address"
+				name="address"
+				[(ngModel)]="address" />
+		</div>
+		<div>
+			<label for="floors">Floors:</label>
+			<input
+				type="number"
+				id="floors"
+				name="floors"
+				[(ngModel)]="floors" />
+		</div>
+		<div>
+			<label for="rooms">Rooms:</label>
+			<input
+				type="number"
+				id="rooms"
+				name="rooms"
+				[(ngModel)]="rooms" />
+		</div>
+		<div>
+			<label for="occupants">Occupants:</label>
+			<input
+				type="number"
+				id="occupants"
+				name="occupants"
+				[(ngModel)]="occupants" />
+		</div>
+		<button (click)="addBuilding()"class="btn">Add Building</button>
+	</div>
+</main>
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
