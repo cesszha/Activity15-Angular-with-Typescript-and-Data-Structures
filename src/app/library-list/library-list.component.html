@@ -1,0 +1,129 @@
+<main>
+	<h1>Library List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Library Name</th>
+				<th>Programming Language</th>
+				<th>Developed By</th>
+				<th>First Release</th>
+				<th>Latest Release</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let library of libraries">
+				<td>{{ library.libraryName }}</td>
+				<td>{{ library.programmingLanguage }}</td>
+				<td>{{ library.developedBy }}</td>
+				<td>{{ library.firstRelease }}</td>
+				<td>{{ library.latestRelease }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="libraryName">Library Name:</label>
+		<input
+			type="text"
+			id="libraryName"
+			name="libraryName"
+			[(ngModel)]="libraryName" />
+	</div>
+	<div>
+		<label for="programmingLanguage">Programming Language:</label>
+		<input
+			type="text"
+			id="programmingLanguage"
+			name="programmingLanguage"
+			[(ngModel)]="programmingLanguage" />
+	</div>
+
+	<div>
+		<label for="developedBy">Developed By</label>
+		<input
+			type="text"
+			id="developedBy"
+			name="developedBy"
+			[(ngModel)]="developedBy" />
+	</div>
+	<div>
+		<label for="firstRelease">First Release</label>
+		<input
+			type="text"
+			id="firstRelease"
+			name="firstRelease"
+			[(ngModel)]="firstRelease" />
+	</div>
+	<div>
+		<label for="latestRelease">Latest Release</label>
+		<input
+			type="text"
+			id="latestRelease"
+			name="latestRelease"
+			[(ngModel)]="latestRelease" />
+	</div>
+	<button (click)="addLibrary()"class="btn">Add Library</button>
+</main>
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>

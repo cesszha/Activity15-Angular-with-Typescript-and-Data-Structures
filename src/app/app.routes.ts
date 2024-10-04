@@ -49,6 +49,7 @@ import { TourListComponent } from './tour-list/tour-list.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { DeveloperToolsListComponent } from './developer-tools-list/developer-tools-list.component';
 import { FrameworkListComponent } from './framework-list/framework-list.component';
+import { LibraryListComponent } from './library-list/library-list.component';
 
 
 
@@ -299,6 +300,11 @@ export const routes: Routes = [
     title: 'Framework List',
     component: FrameworkListComponent,
     path: 'framework-list',
+},
+{
+    title: 'Library List',
+    component: LibraryListComponent,
+    path: 'library-list',
 },
 
 
