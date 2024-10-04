@@ -35,6 +35,7 @@ import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.compon
 import { VideoListComponent } from './video-list/video-list.component';
 import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 import { FurnitureListComponent } from './furniture-list/furniture-list.component';
+import { AccessoryListComponent } from './accessory-list/accessory-list.component';
 
 
 
@@ -215,6 +216,11 @@ export const routes: Routes = [
     title: 'Furniture List',
     component: FurnitureListComponent,
     path: 'furniture-list',
+},
+{
+    title: 'Accessory List',
+    component: AccessoryListComponent,
+    path: 'accessory-list',
 },
 
 
