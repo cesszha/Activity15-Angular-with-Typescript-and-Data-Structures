@@ -1,0 +1,136 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Furniture List</h1>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Description</th>
+							<th>Type</th>
+							<th>Price</th>
+							<th>Category</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let furniture of furnitureList">
+							<td>{{ furniture.name }}</td>
+							<td>{{ furniture.description }}</td>
+							<td>{{ furniture.type }}</td>
+							<td>{{ furniture.price }}</td>
+							<td>{{ furniture.category }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="name">Name:</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				[(ngModel)]="name" />
+		</div>
+		<div>
+			<label for="description">Description:</label>
+			<input
+				type="text"
+				id="description"
+				name="description"
+				[(ngModel)]="description" />
+		</div>
+		<div>
+			<label for="type">Type:</label>
+			<input
+				type="text"
+				id="type"
+				name="type"
+				[(ngModel)]="type" />
+		</div>
+		<div>
+			<label for="price">Price:</label>
+			<input
+				type="number"
+				id="price"
+				name="price"
+				[(ngModel)]="price" />
+		</div>
+		<div>
+			<label for="category">Category:</label>
+			<input
+				type="text"
+				id="category"
+				name="category"
+				[(ngModel)]="category" />
+		</div>
+		<div>
+			<button (click)="addFurniture()"class="btn">Add Furniture</button>
+		</div>
+	</div>
+</main>
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
