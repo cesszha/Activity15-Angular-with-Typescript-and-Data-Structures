@@ -47,6 +47,7 @@ import { BudgetListComponent } from './budget-list/budget-list.component';
 import { PresentationListComponent } from './presentation-list/presentation-list.component';
 import { TourListComponent } from './tour-list/tour-list.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { DeveloperToolsListComponent } from './developer-tools-list/developer-tools-list.component';
 
 
 
@@ -288,6 +289,13 @@ export const routes: Routes = [
     component: EventListComponent,
     path: 'event-list',
 },
+{
+    title: 'Developer Tools List',
+    component: DeveloperToolsListComponent,
+    path: 'developer-tools-list',
+},
+
+
 
 
 

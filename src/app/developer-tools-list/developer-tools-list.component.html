@@ -1,0 +1,122 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Developer Tools</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Tool Name</th>
+							<th>Tool Description</th>
+							<th>Tool Price</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let tool of developerTools">
+							<td>{{ tool.toolName }}</td>
+							<td>{{ tool.toolDescription }}</td>
+							<td>{{ tool.toolPrice }}</td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="name">Name:</label>
+			<input
+				type="text"
+				id="name"
+				class="form-control"
+				[(ngModel)]="toolName" />
+		</div>
+		<div>
+			<label for="description">Description:</label>
+			<input
+				type="text"
+				id="description"
+				class="form-control"
+				[(ngModel)]="toolDescription" />
+		</div>
+		<div>
+			<label for="price">Price:</label>
+			<input
+				type="number"
+				id="price"
+				class="form-control"
+				[(ngModel)]="toolPrice" />
+		</div>
+		<div>
+			<button
+				class="btn btn-primary"
+				(click)="addDeveloperTool()">
+				Add Tool
+			</button>
+		</div>
+	</div>
+</main>
+<style>
+    main {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-fruit {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
