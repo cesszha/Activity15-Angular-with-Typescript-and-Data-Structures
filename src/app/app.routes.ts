@@ -33,6 +33,7 @@ import { LaptopSpecListComponent } from './laptop-spec-list/laptop-spec-list.com
 import { ComputerHardwareListComponent } from './computer-hardware-list/computer-hardware-list.component';
 import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.component';
 import { VideoListComponent } from './video-list/video-list.component';
+import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
 
 export const routes: Routes = [
 {
@@ -199,6 +200,11 @@ export const routes: Routes = [
     title: 'Video List',
     component: VideoListComponent,
     path: 'video-list',
+},
+{
+    title: 'TV Show List',
+    component: TvShowListComponent,
+    path: 'tv-show-list',
 },
 
 
