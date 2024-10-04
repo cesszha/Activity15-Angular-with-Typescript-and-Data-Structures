@@ -43,6 +43,7 @@ import { ComposerListComponent } from './composer-list/composer-list.component';
 import { PodcastListComponent } from './podcast-list/podcast-list.component';
 import { ExerciseListComponent } from './exercise-list/exercise-list.component';
 import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
+import { BudgetListComponent } from './budget-list/budget-list.component';
 
 
 
@@ -263,6 +264,11 @@ export const routes: Routes = [
     title: 'Meal Plan List',
     component: MealPlanListComponent,
     path: 'meal-plan-list',
+},
+{
+    title: 'Budget List',
+    component: BudgetListComponent,
+    path: 'budget-list',
 },
 
 
