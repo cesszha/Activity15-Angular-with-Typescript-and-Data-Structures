@@ -1,5 +1,5 @@
 export default interface LanguageList {
-	langugae: string;
+	language: string;
 	description: string;
 	origin: string;
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
 import LibraryList from '../list/LibraryList';
+import { LibraryListService } from '../services/library-list/library-list.service';
 @Component({
   selector: 'app-library-list',
   standalone: true,
@@ -10,8 +11,10 @@ import LibraryList from '../list/LibraryList';
   styleUrl: './library-list.component.css'
 })
 export class LibraryListComponent {
-  libraries: LibraryList[] = [];
-
+  libraries = [] as LibraryList[];
+ constructor(private libraryService: LibraryListService){
+	this.libraries = this.libraryService.getLibraries();
+ }
 	libraryName: string = '';
 	programmingLanguage: string = '';
 	developedBy: string = '';
@@ -19,13 +22,13 @@ export class LibraryListComponent {
 	latestRelease: string = '';
 
 	addLibrary() {
-		this.libraries.push({
-			libraryName: this.libraryName,
-			programmingLanguage: this.programmingLanguage,
-			developedBy: this.developedBy,
-			firstRelease: this.firstRelease,
-			latestRelease: this.latestRelease,
-		});
+		this.libraryService.addLibrary(
+			 this.libraryName,
+			 this.programmingLanguage,
+			 this.developedBy,
+			 this.firstRelease,
+			 this.latestRelease,
+		);
 
 		this.libraryName = '';
 		this.programmingLanguage = '';

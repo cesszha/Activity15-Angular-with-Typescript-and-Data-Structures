@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Subject from '../list/SubjectList';
+import { SubjectListService } from '../services/subject-list/subject-list.service';
 @Component({
   selector: 'app-subject-list',
   standalone: true,
@@ -10,21 +11,21 @@ import Subject from '../list/SubjectList';
   styleUrl: './subject-list.component.css'
 })
 export class SubjectListComponent {
-addCarModel() {
-throw new Error('Method not implemented.');
-}
-  subjects: Subject[] = [];
 
+  subjects = [] as Subject[];
+	constructor(private subjectListService: SubjectListService){
+		this.subjects = this.subjectListService.getSubjects();
+	}
 	
 	subject: string = '';
 	professor: string = '';
 
 	addSubject(): void {
-		this.subjects.push({
+		this.subjectListService.addSubject(
 			
-			subject: this.subject,
-			professor: this.professor,
-		});
+		  this.subject,
+		  this.professor,
+		);
 
 	
 		this.subject = '';

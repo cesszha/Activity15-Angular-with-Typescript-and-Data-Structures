@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import LaptopSpecs from '../list/LaptopSpecList';
+import { LaptopSpecListService } from '../services/laptop-spec-list/laptop-spec-list.service';
 @Component({
   selector: 'app-laptop-spec-list',
   standalone: true,
@@ -10,7 +11,10 @@ import LaptopSpecs from '../list/LaptopSpecList';
   styleUrl: './laptop-spec-list.component.css'
 })
 export class LaptopSpecListComponent {
-  laptops: LaptopSpecs[] = [];
+  laptops = [] as LaptopSpecs[];
+  constructor(private laptopService: LaptopSpecListService){
+	this.laptops = this.laptopService.getLaptopSpecs();
+  }
 
 	model: string = '';
 	processor: string = '';
@@ -20,16 +24,15 @@ export class LaptopSpecListComponent {
 	graphics: string = '';
 
 	addLaptop() {
-		this.laptops.push({
-			model: this.model,
-			specs: {
-				processor: this.processor,
-				ram: this.ram,
-				storage: this.storage,
-				display: this.display,
-				graphics: this.graphics,
-			},
-		});
+		this.laptopService.addLaptopSpecs(
+			this.model,
+			this.processor,
+			this.ram,
+			this.storage,
+			this.display,
+			this.graphics,
+			
+		);
 		this.model = '';
 		this.processor = '';
 		this.ram = '';

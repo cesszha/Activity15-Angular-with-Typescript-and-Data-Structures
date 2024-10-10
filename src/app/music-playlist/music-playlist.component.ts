@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import MusicPlayList from '../list/MusicPlaylist';
+import { MusicPlaylistService } from '../services/music-playlist/music-playlist.service';
 
 @Component({
   selector: 'app-music-playlist',
@@ -12,29 +13,33 @@ import MusicPlayList from '../list/MusicPlaylist';
 })
 export class MusicPlaylistComponent {
 
-  musicPlayList: MusicPlayList[] = [];
+  musicPlayList = [] as  MusicPlayList[];
+	constructor (private musicPlayListService: MusicPlaylistService){
+		this.musicPlayList = this.musicPlayListService.getMusicPlayList();
+	}
+
 	name: string = '';
 	artist: string = '';
 	album: string = '';
 	duration: string = '';
 	genre: string = '';
-	year: string = '';
+	year: number = 0;
 
 	addMusicPlayList(): void {
-		this.musicPlayList.push({
-			name: this.name,
-			artist: this.artist,
-			album: this.album,
-			duration: this.duration,
-			genre: this.genre,
-			year: this.year,
-		});
+		this.musicPlayListService.addMusicPlayList(
+			this.name,
+			 this.artist,
+			 this.album,
+			 this.duration,
+			 this.genre,
+			 this.year,
+		);
 
 		this.name = '';
 		this.artist = '';
 		this.album = '';
 		this.duration = '';
 		this.genre = '';
-		this.year = '';
+		this.year = 0;
 	}
 }

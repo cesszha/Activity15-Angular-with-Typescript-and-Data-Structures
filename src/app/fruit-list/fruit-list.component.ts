@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
 import FruitList from '../list/FruitList';
+import { FruitListService } from '../services/fruit-list/fruit-list.service';
 @Component({
   selector: 'app-fruit-list',
   standalone: true,
@@ -10,7 +11,10 @@ import FruitList from '../list/FruitList';
   styleUrl: './fruit-list.component.css'
 })
 export class FruitListComponent {
-  fruits: FruitList[] = [];
+  fruits = [] as FruitList[];
+  constructor(private fruitService: FruitListService){
+	this.fruits = this.fruitService.getFruits();
+  }
 
 	id: string = '';
 	name: string = '';
@@ -18,12 +22,12 @@ export class FruitListComponent {
 	price: number = 0;
 
 	addFruit(): void {
-		this.fruits.push({
-			id: this.id,
-			name: this.name,
-			quantity: this.quantity,
-			price: this.price,
-		});
+		this.fruitService.addFruit(
+			this.id,
+			this.name,
+			this.quantity,
+		    this.price,
+		);
 
 		this.id = '';
 		this.name = '';

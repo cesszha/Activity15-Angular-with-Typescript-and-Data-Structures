@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import LaptopList from '../list/LaptopList';
+import { LaptopListService } from '../services/laptop-list/laptop-list.service';
 @Component({
   selector: 'app-laptop-list',
   standalone: true,
@@ -10,8 +11,10 @@ import LaptopList from '../list/LaptopList';
   styleUrl: './laptop-list.component.css'
 })
 export class LaptopListComponent {
-  laptops: LaptopList[] = [];
-
+  laptops = [] as LaptopList[];
+	constructor(private laptopService: LaptopListService){
+		this.laptops = this.laptopService.getLaptops();
+	}
 	id: number = 0;
 	model: string = '';
 	brand: string = '';
@@ -23,17 +26,17 @@ export class LaptopListComponent {
 	graphics: string = '';
 
 	addLaptop() {
-		this.laptops.push({
-			id: this.id,
-			model: this.model,
-			brand: this.brand,
-			price: this.price,
-			processor: this.processor,
-			ram: this.ram,
-			storage: this.storage,
-			display: this.display,
-			graphics: this.graphics,
-		});
+		this.laptopService.addLaptop(
+			this.id,
+			this.model,
+			this.brand,
+			this.price,
+			this.processor,
+			this.ram,
+			this.storage,
+			this.display,
+			this.graphics,
+		);
 		this.id = 0;
 		this.model = '';
 		this.brand = '';

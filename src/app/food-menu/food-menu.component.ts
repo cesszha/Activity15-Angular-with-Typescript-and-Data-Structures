@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import FoodMenuList from '../list/FoodMenu';
+import { FoodMenuListService } from '../services/food-menu-list/food-menu-list.service';
 @Component({
   selector: 'app-food-menu',
   standalone: true,
@@ -10,20 +11,22 @@ import FoodMenuList from '../list/FoodMenu';
   styleUrl: './food-menu.component.css'
 })
 export class FoodMenuComponent {
-  foodMenuList: FoodMenuList[] = [];
-
+  foodMenuList = [] as FoodMenuList[];
+	constructor(private foodMenuService: FoodMenuListService){
+		this.foodMenuList = this.foodMenuService.getFoodMenus();
+	}
 	name: string = '';
 	price: number = 0;
 	description: string = '';
 	rating: number = 0;
 
 	addFoodMenu() {
-		this.foodMenuList.push({
-			name: this.name,
-			price: this.price,
-			description: this.description,
-			rating: this.rating,
-		});
+		this.foodMenuService.addFoodMenu(
+			this.name,
+			this.price,
+			this.description,
+			this.rating,
+		);
 		this.name = '';
 		this.price = 0;
 		this.description = '';

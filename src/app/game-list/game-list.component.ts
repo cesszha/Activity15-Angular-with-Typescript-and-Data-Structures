@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import GameList from '../list/GameList';
+import { GameListService } from '../services/game-list/game-list.service';
 
 @Component({
   selector: 'app-game-list',
@@ -11,21 +12,24 @@ import GameList from '../list/GameList';
   styleUrl: './game-list.component.css'
 })
 export class GameListComponent {
-  games: GameList[] = [];
-
+  games = [] as GameList [];
+  constructor(private gameService: GameListService){
+	this.games = this.gameService.getGames();
+  }
 	
 	name: string = '';
 	description: string = '';
 	platform: string = '';
-game: any;
+	game: any;
 
 	addGame(): void {
-		this.games.push({
+		this.gameService.addGame(
 		
-			name: this.name,
-			description: this.description,
-			platform: this.platform,
-		});
+			this.name,
+			this.description,
+			this.platform,
+			this.game,
+		);
 
 	
 		this.name = '';

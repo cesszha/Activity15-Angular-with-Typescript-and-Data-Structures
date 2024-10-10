@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import VideoList from '../list/VideoList';
+import { VideoListService } from '../services/video-list/video-list.service';
 @Component({
   selector: 'app-video-list',
   standalone: true,
@@ -10,7 +11,11 @@ import VideoList from '../list/VideoList';
   styleUrl: './video-list.component.css'
 })
 export class VideoListComponent {
-	videoList: VideoList[] = [];
+	videoList = [] as VideoList [];
+	constructor(private videoService:VideoListService ){
+		this.videoList = this.videoService.getVideos();
+	}
+
 	name: string = '';
 	description: string = '';
 	url: string = '';
@@ -18,13 +23,14 @@ export class VideoListComponent {
 	category: string = '';
 
 	addVideo() {
-		this.videoList.push({
-			name: this.name,
-			description: this.description,
-			url: this.url,
-			rating: this.rating,
-			category: this.category,
-		});
+		this.videoService.addVideos(
+			this.name,
+			this.description,
+			this.url,
+			this.rating,
+			this.category,
+
+		);
 		this.name = '';
 		this.description = '';
 		this.url = '';

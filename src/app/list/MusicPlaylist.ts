@@ -4,5 +4,5 @@ export default interface MusicPlayList {
 	album: string;
 	duration: string;
 	genre: string;
-	year: string;
+	year: number;
 }

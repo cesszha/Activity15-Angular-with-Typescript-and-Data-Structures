@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import ClassroomList from '../list/ClassroomList';
-
+import { ClassroomListService } from '../services/classroom-list/classroom-list.service';
 @Component({
   selector: 'app-classroom-list',
   standalone: true,
@@ -11,18 +11,20 @@ import ClassroomList from '../list/ClassroomList';
   styleUrl: './classroom-list.component.css'
 })
 export class ClassroomListComponent {
-  classroomList: ClassroomList[] = [];
-
+  classroomList = [] as ClassroomList[];
+  constructor(private classroomService: ClassroomListService){
+		this.classroomList = this.classroomService.getClassrooms();
+  }
 	section: string = '';
 	professor: string = '';
 	studentCount: number = 0;
 
 	addNewClassroom() {
-		this.classroomList.push({
-			section: this.section,
-			professor: this.professor,
-			studentCount: this.studentCount,
-		});
+		this.classroomService.addClassroom(
+		this.section,
+		this.professor,
+		this.studentCount,
+		);
 		this.section = '';
 		this.professor = '';
 		this.studentCount = 0;

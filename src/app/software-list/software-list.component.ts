@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import SoftwareList from '../list/SoftwareList';
+import { SoftwareListService } from '../services/software-list/software-list.service';
 
 @Component({
   selector: 'app-software-list',
@@ -11,19 +12,23 @@ import SoftwareList from '../list/SoftwareList';
   styleUrl: './software-list.component.css'
 })
 export class SoftwareListComponent {
-  softwareList: SoftwareList[] = [];
+  softwareList = [] as SoftwareList[];
+  constructor(private softwareListService: SoftwareListService){
+	this.softwareList = this.softwareListService.getSoftware();
+  }
+
 	name: string = '';
 	description: string = '';
 	platform: string = '';
-type: any;
+	type: any;
 
 	addSoftware(): void {
-		this.softwareList.push({
+		this.softwareListService.addSoftware(
 		
-			name: this.name,
-			description: this.description,
-			type: this.type,
-		});
+			 this.name,
+			 this.description,
+			 this.type,
+		);
 
 	
 		this.name = '';

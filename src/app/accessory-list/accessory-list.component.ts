@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import AccessoryList from '../list/AcessorryList';
+import { AccessoryListService } from '../services/accessory-list/accessory-list.service';
 @Component({
   selector: 'app-accessory-list',
   standalone: true,
@@ -11,6 +12,9 @@ import AccessoryList from '../list/AcessorryList';
 })
 export class AccessoryListComponent {
   accessoryList: AccessoryList[] = [];
+  constructor(private accessoryService: AccessoryListService){
+	this.accessoryList = this.accessoryService.getAccessories();
+  }
 
 	name: string = '';
 	description: string = '';
@@ -19,13 +23,13 @@ export class AccessoryListComponent {
 	category: string = '';
 
 	addAccessory() {
-		this.accessoryList.push({
-			name: this.name,
-			description: this.description,
-			type: this.type,
-			price: this.price,
-			category: this.category,
-		});
+		this.accessoryService.addAccessory(
+			this.name,
+			this.description,
+			this.price,
+			this.type,
+			this.category,
+		)
 
 		this.name = '';
 		this.description = '';
